@@ -59,6 +59,9 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 #add sites enabled dir
 ADD nginx/sites-enabled/ /etc/nginx/sites-enabled/
 
+#copy in the app
+COPY app/ /app/
+
 #install scripts
 ADD scripts/ /scripts/
 
@@ -72,7 +75,7 @@ RUN /scripts/mysql_init.sh
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/app/storage","/var/lib/mysql"]
+VOLUME ["/var/lib/mysql"]
 
 #expose port 80
 EXPOSE 80
