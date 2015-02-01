@@ -59,9 +59,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 #add sites enabled dir
 ADD nginx/sites-enabled/ /etc/nginx/sites-enabled/
 
-COPY app/storage/ /app/storage/
-RUN chown -R www-data:www-data /app/storage
-
 #install scripts
 ADD scripts/ /scripts/
 
