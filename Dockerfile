@@ -75,7 +75,7 @@ RUN /scripts/mysql_init.sh
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/var/lib/mysql"]
+#VOLUME ["/var/lib/mysql"]
 
 #expose port 80
 EXPOSE 80
